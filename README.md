@@ -13,7 +13,7 @@ The following functions can show you how to use Firebase:
 
 **Screenshot of App**:
 
-![App Screenshot](app_screenshot.png)
+![App Screenshot](app_screenshot.jpg)
 
 **Screenshot of Firebase**
 
