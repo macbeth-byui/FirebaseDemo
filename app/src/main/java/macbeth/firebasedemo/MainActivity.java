@@ -150,7 +150,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // Loop through of each of the elements of the list (children) and convert
-                // to User objects.
+                // to User objects.  Since we are receiving all of them, we need to clear our array first.
+                records.clear();
                 for (DataSnapshot child : snapshot.getChildren()) {
                     records.add(child.getValue(User.class));
                     Log.d("FirebaseDemo", "Received record from Firebase key = " + child.getKey());
