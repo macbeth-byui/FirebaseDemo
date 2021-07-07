@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -64,6 +65,13 @@ public class MainActivity extends AppCompatActivity {
             addRecord();
             updateTimeStamp();
         });
+
+        // This service is to catch when the App shuts down ... this will allow
+        // me to do some more firebase updates when the App shuts down.  You
+        // can't make firebase updates in the onDestroy state.  To be complete,
+        // we should have onDestroy implemented to un-register from firebase.
+        Intent service = new Intent(this, AppShutdownService.class);
+        startService(service);
     }
 
     /**
